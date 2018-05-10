@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Question } from '../models/Question';
+import { ThrowStmt } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,9 @@ export class DataService {
 
   getQuestions() {
     return this.questions;
+  }
+
+  addQuestion(question:Question) {
+    this.questions.unshift(question);
   }
 }
